@@ -15,7 +15,7 @@ z [https://micropython.org/download/esp8266/](https://micropython.org/download/
 a zadej:
 
 ```console
-(env)$ esptool.py --port /dev/ttyUSB0 --baud 230400 write_flash 0 esp8266-20161110-v1.8.6.bin
+(env)$ esptool --port /dev/ttyUSB0 --baud 230400 write-flash --flash-size=detect 0 ESP8266_GENERIC-20260406-v1.28.0.bin
 ```
 
 Hodnotu pro `--port` opět doplň podle svého systému – např. `/dev/tty.wchusbserial1420` na Macu, `COM3` na Windows.
@@ -32,7 +32,7 @@ Jméno souboru (poslední argument) použij podle toho co jsi stáhl{{a}}.
 >
 > Některé problémy vyřeší nižší rychlost: `--baud 112500`.
 >
-> Některé problémy vyřeší detekce velikosti Flash paměti: `--flash_size detect`.
+> Některé problémy vyřeší detekce velikosti Flash paměti: `--flash_size=detect`.
 
 Je-li na desce nahraný firmware, tento příkaz by měl fungovat. U jiného
 firmware, případně u poškozeného MicroPythonu, je potřeba při resetu

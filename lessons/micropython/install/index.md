@@ -59,9 +59,22 @@ Jak napovídá vypsaný text, pomocí <kbd>Ctrl</kbd>+<kbd>]</kbd> můžeš
 
 Kdyby `mpremote` nefungovalo, postupuj podle operačního systému na svém počítači:
 
-* [Linux]({{ subpage_url('linux') }}) (`picocom`)
-* [macOS]({{ subpage_url('macos') }}) (`screen`)
-* [Windows]({{ subpage_url('windows') }}) (PuTTY)
+* [Linux]({{ subpage_url('linux') }})
+  * `mpremote` hlásí `device not found`
+    * může se jednat o problém s oprávněními
+    * Ubuntu: je potřeba sa přidat do skupiny `dialout`
+      * `usermod -aG dialout JMENO_UZIVATELE`
+    * Ostatní distra: je potřeba sa přidat do skupiny `uucp`
+      * `usermod -aG uucp JMENO_UZIVATELE`
+    * nezapomeňte restartovat počítač, po zadání příkazu `groups` by jste měli vidět
+      příslušnou skupinu
+  * může pomoct instalace `picocom`
+* [macOS]({{ subpage_url('macos') }})
+  * může pomoct instalace `screen`
+* [Windows]({{ subpage_url('windows') }})
+  * `mpremote` hlásí `device not found`
+    * možná chybějí ovladače: https://www.pololu.com/docs/0j7/all#2
+  * může pomoct instalace PuTTY
 
 Kdyby něco nefungovalo, poraď se s koučem.
 
